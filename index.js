@@ -7,5 +7,11 @@ const schema = buildSchema(`
     }
 `)
 
+// Configurar los resolvers
+const resolvers = {
+    hello: () => 'Hola mundo',
+    saludo: () => 'como estan todos',
+}
+
 // Ejecutar el query
-graphql(schema, '{ hello }').then((data) => console.log(data))
+graphql(schema, '{ hello }', resolvers).then((data) => console.log(data))
